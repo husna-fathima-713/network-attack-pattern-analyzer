@@ -50,7 +50,7 @@ Build a system to analyze network or telemetry data and classify:
 
 
 
-\## Status
+\## Status(In progress)
 
 Phase 1: Project setup
 
