@@ -1,6 +1,7 @@
 from capture import load_packets
 from features import extract_features
 from detection import detect_port_scan, detect_flood
+from analyzer import log_results
 
 PCAP_FILE = "../data/sample.pcap"
 
@@ -13,7 +14,6 @@ def main():
 
     features = extract_features(packets)
 
-    # Detection
     port_scans = detect_port_scan(features)
     floods = detect_flood(features)
 
@@ -32,6 +32,10 @@ def main():
             print(f" - {ip} sent {count} packets")
     else:
         print("No Flood Detected")
+
+    # Log results
+    log_results(port_scans, floods)
+    print("\n[INFO] Results saved to logs.txt")
 
 
 if __name__ == "__main__":
