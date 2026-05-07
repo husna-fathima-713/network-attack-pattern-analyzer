@@ -25,6 +25,7 @@ def detect_flood(features, threshold=100):
 
     for f in features:
         src = f.get("src_ip")
+
         if src:
             ip_count[src] += 1
 
@@ -33,3 +34,22 @@ def detect_flood(features, threshold=100):
             flood_alerts.append((ip, count))
 
     return flood_alerts
+
+
+def detect_syn_flood(features, threshold=50):
+    syn_count = defaultdict(int)
+    syn_alerts = []
+
+    for f in features:
+        src = f.get("src_ip")
+        flags = f.get("flags")
+
+        # Detect SYN packets
+        if flags == "S":
+            syn_count[src] += 1
+
+    for ip, count in syn_count.items():
+        if count > threshold:
+            syn_alerts.append((ip, count))
+
+    return syn_alerts
