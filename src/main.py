@@ -1,12 +1,19 @@
+import sys
 from capture import load_packets
 from features import extract_features
 from detection import detect_port_scan, detect_flood
 from analyzer import log_results
 
-PCAP_FILE = "../data/sample.pcap"
 
 def main():
-    packets = load_packets(PCAP_FILE)
+    # Check CLI argument
+    if len(sys.argv) < 2:
+        print("Usage: python main.py <path_to_pcap>")
+        return
+
+    pcap_file = sys.argv[1]
+
+    packets = load_packets(pcap_file)
 
     if not packets:
         print("[INFO] No packets loaded.")
@@ -33,7 +40,6 @@ def main():
     else:
         print("No Flood Detected")
 
-    # Log results
     log_results(port_scans, floods)
     print("\n[INFO] Results saved to logs.txt")
 

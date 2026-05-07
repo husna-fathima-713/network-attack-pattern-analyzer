@@ -10,3 +10,15 @@ Flood Detected:
  - 192.168.1.2 sent 428 packets
 
 ===========================
+
+===== Analysis Report =====
+Time: 2026-05-07 21:17:53.942468
+
+Port Scan Detected:
+ - 192.168.1.2 scanned 24 ports
+ - 192.168.1.1 scanned 42 ports
+
+Flood Detected:
+ - 192.168.1.2 sent 428 packets
+
+===========================
