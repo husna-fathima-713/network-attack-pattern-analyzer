@@ -50,3 +50,31 @@ Flood Detected:
 No SYN Flood Detected
 
 ===========================
+
+===== Analysis Report =====
+Time: 2026-05-08 23:22:52.039889
+
+Port Scan Detected:
+ - 192.168.1.2 scanned 24 ports
+ - 192.168.1.1 scanned 42 ports
+
+Flood Detected:
+ - 192.168.1.2 sent 428 packets
+
+No SYN Flood Detected
+
+===========================
+
+===== Analysis Report =====
+Time: 2026-05-08 23:24:08.889667
+
+Port Scan Detected:
+ - 192.168.1.2 scanned 24 ports
+ - 192.168.1.1 scanned 42 ports
+
+Flood Detected:
+ - 192.168.1.2 sent 428 packets
+
+No SYN Flood Detected
+
+===========================
