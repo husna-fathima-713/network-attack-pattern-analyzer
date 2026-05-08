@@ -8,6 +8,7 @@ from detection import (
     detect_syn_flood
 )
 from analyzer import log_results
+from visualizer import visualize_attacks
 
 
 def main():
@@ -72,6 +73,9 @@ def main():
 
     # Save logs
     log_results(port_scans, floods, syn_floods)
+
+    # Visualize results
+    visualize_attacks(features)
 
     print("\n[INFO] Results saved to logs.txt")
 
